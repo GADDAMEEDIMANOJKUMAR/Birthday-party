@@ -17,6 +17,7 @@ const App = () => {
           {people.length}
         </span>
          Birthday Party</p>
+
       <div className='people'>
         {people.map((person) => {
           // console.log(person)
@@ -45,6 +46,7 @@ const App = () => {
     </div>
       <p className='footer'>Made with ❤️ by Manoj kumar</p>
       <p className='footer'>© 2023 Birthday Party App</p>
+      <p className='footer'>All rights reserved</p>
 
     </div>
   );
