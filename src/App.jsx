@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className='container'>
-      <h1  className='head'>Birthday Party App</h1>
+      <h1 className='head'>Birthday Party App</h1>
       <p className='para'>
         <span
           className='length'
@@ -21,54 +21,60 @@ const App = () => {
         >
           {people.length}
         </span>
-         Birthday Party</p>
-         <input type='text' className='search' placeholder='Search by name...' onChange={(e) => {
+        Birthday Party
+      </p>
+      <input
+        type='text'
+        className='search'
+        placeholder='Search by name...'
+        onChange={(e) => {
           const searchTerm = e.target.value.toLowerCase()
-          const filteredPeople = data.filter(person => person.name.toLowerCase().includes(searchTerm))
+          const filteredPeople = data.filter(person =>
+            person.name.toLowerCase().includes(searchTerm)
+          )
           setPeople(filteredPeople)
-        }} />
+        }}
+      />
 
       <div className='people'>
         {people.map((person) => {
-          // console.log(person)
           const { age, id, image, name } = person
-          // console.log(age,id,image,name)
           return (
-            
             <div className='person' key={id}>
               <img src={image} alt={name} className='person-image' />
               <div className='person-info'>
                 <h4 className='person-name'>{name}</h4>
                 <p className='person-age'>Age: {age}</p>
-                </div>
-                <i className="bi bi-trash-fill del" onClick={() => handleDelete(id)}></i>
-                </div>
+              </div>
+              <i className="bi bi-trash-fill del" onClick={() => handleDelete(id)}></i>
+            </div>
           );
         })}
-    </div>
+      </div>
 
-    <div className='buttons'>
+      <div className='buttons'>
+        {people.length >= 1 && (
+          <button className='btn' onClick={() => setPeople([])}>
+            Clear All
+          </button>
+        )}
+        {people.length === 0 && (
+          <button className='btn' onClick={() => setPeople(data)}>
+            Refresh
+          </button>
+        )}
+      </div>
 
-      {people.length >= 1 && <button className='btn' onClick={() => setPeople([])}>
-        Clear All
-      </button>}
-      {people.length == 0 &&<button className='btn' onClick={() => setPeople(data)}>
-        Refresh
-      </button>}
-    </div>
-      {/* <div>
-          <a
-          href={`mailto:manojgoud335@gmail.com?subject=Happy Birthday!&body=Happy Birthday, have a great day!`}
-          className="btn"
-          >
-          Send Email
-          </a>
-      </div> */}
-      
+      {/* Show how many members deleted if not full, else show nothing */}
+      {people.length !== data.length && (
+        <p className='para'>
+          <span className='length'>{data.length - people.length}</span> member{data.length - people.length > 1 ? 's' : ''} deleted
+        </p>
+      )}
+
       <p className='footer'>Made with ❤️ by Manoj kumar</p>
       <p className='footer'>© 2023 Birthday Party App</p>
       <p className='footer'>All rights reserved</p>
-
     </div>
   );
 }
