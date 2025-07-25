@@ -31,13 +31,14 @@ const App = () => {
                 <h4 className='person-name'>{name}</h4>
                 <p className='person-age'>Age: {age}</p>
                 </div>
+                <i className="bi bi-trash-fill del" onClick={() => setPeople(people.filter((p) => p.id !== id))}></i>
                 </div>
           );
         })}
     </div>
     <div className='buttons'>
 
-      {people.length > 1 && <button className='btn' onClick={() => setPeople([])}>
+      {people.length >= 1 && <button className='btn' onClick={() => setPeople([])}>
         Clear All
       </button>}
       {people.length == 0 &&<button className='btn' onClick={() => setPeople(data)}>
