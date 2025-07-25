@@ -7,8 +7,7 @@ const App = () => {
   console.log(data)
 
   const handleDelete = (id) => {
-    setPeople(people.filter((person) => person.id !== id))
-   
+    setPeople(people.filter((p) => p.id !== id))
     
   }
 
@@ -37,7 +36,7 @@ const App = () => {
                 <h4 className='person-name'>{name}</h4>
                 <p className='person-age'>Age: {age}</p>
                 </div>
-                <i className="bi bi-trash-fill del" onClick={() => handleDelete()}></i>
+                <i className="bi bi-trash-fill del" onClick={() => handleDelete(id)}></i>
                 </div>
           );
         })}
