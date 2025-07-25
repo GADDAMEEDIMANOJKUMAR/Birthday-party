@@ -125,7 +125,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    margin:10px;
   }
   .person-image {
     margin-bottom: 10px;
@@ -141,6 +141,10 @@
     flex-direction: column;
     gap: 10px;
     margin: 10px 0;
+  }
+  .del{
+    margin-left: -5px;
+    
   }
 }
 
@@ -165,4 +169,5 @@
     font-size: 0.9rem;
     padding: 8px 12px;
   }
+
 }

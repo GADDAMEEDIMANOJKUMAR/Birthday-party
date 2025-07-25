@@ -6,6 +6,12 @@ const App = () => {
   const [people, setPeople] = useState(data)
   console.log(data)
 
+  const handleDelete = (id) => {
+    setPeople(people.filter((person) => person.id !== id))
+   
+    
+  }
+
   return (
     <div className='container'>
       <h1  className='head'>Birthday Party App</h1>
@@ -31,7 +37,7 @@ const App = () => {
                 <h4 className='person-name'>{name}</h4>
                 <p className='person-age'>Age: {age}</p>
                 </div>
-                <i className="bi bi-trash-fill del" onClick={() => setPeople(people.filter((p) => p.id !== id))}></i>
+                <i className="bi bi-trash-fill del" onClick={() => handleDelete()}></i>
                 </div>
           );
         })}
