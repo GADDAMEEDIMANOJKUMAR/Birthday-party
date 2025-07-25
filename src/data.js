@@ -34,4 +34,12 @@ export default [
     image:
       'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
   },
+  {
+    id: 6,
+    name: 'Manoj Kumar',
+    age: 25,
+    image:
+      'https://res.cloudinary.com/dn0v6bhw1/image/upload/v1732620060/MANOJ_yfnnxw.jpg',
+    
+  },
 ];

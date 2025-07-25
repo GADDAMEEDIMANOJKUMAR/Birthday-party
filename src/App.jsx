@@ -22,6 +22,11 @@ const App = () => {
           {people.length}
         </span>
          Birthday Party</p>
+         <input type='text' className='search' placeholder='Search by name...' onChange={(e) => {
+          const searchTerm = e.target.value.toLowerCase()
+          const filteredPeople = data.filter(person => person.name.toLowerCase().includes(searchTerm))
+          setPeople(filteredPeople)
+        }} />
 
       <div className='people'>
         {people.map((person) => {
@@ -41,6 +46,7 @@ const App = () => {
           );
         })}
     </div>
+
     <div className='buttons'>
 
       {people.length >= 1 && <button className='btn' onClick={() => setPeople([])}>
@@ -50,6 +56,15 @@ const App = () => {
         Refresh
       </button>}
     </div>
+      {/* <div>
+          <a
+          href={`mailto:manojgoud335@gmail.com?subject=Happy Birthday!&body=Happy Birthday, have a great day!`}
+          className="btn"
+          >
+          Send Email
+          </a>
+      </div> */}
+      
       <p className='footer'>Made with ❤️ by Manoj kumar</p>
       <p className='footer'>© 2023 Birthday Party App</p>
       <p className='footer'>All rights reserved</p>
