@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className='container'>
-      <h1 className='head'>Birthday Party App</h1>
+      <h1 className='head'>Birthday Remainder</h1>
       <p className='para'>
         <span
           className='length'
@@ -73,8 +73,6 @@ const App = () => {
       )}
 
       <p className='footer'>Made with ❤️ by Manoj kumar</p>
-      <p className='footer'>© 2023 Birthday Party App</p>
-      <p className='footer'>All rights reserved</p>
     </div>
   );
 }
